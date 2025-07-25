@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Paws Rescue - Animal Rescue Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        .game-screen {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1470114716159-e389f8712fda?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+        }
+        .animal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <i class="fas fa-paw text-3xl mr-3"></i>
+                <h1 class="text-3xl font-bold">Street Paws Rescue</h1>
+            </div>
+            <nav class="flex space-x-1 md:space-x-4">
+                <a href="#about" class="px-3 py-2 rounded hover:bg-white hover:text-blue-600 transition">About</a>
+                <a href="#features" class="px-3 py-2 rounded hover:bg-white hover:text-blue-600 transition">Features</a>
+                <a href="#gameplay" class="px-3 py-2 rounded hover:bg-white hover:text-blue-600 transition">Gameplay</a>
+                <a href="#download" class="px-3 py-2 rounded bg-white text-blue-600 font-semibold hover:bg-blue-100 transition">Download</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="game-screen text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Rescue. Rehabilitate. Rehome.</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Embark on a heartwarming journey to save street animals and give them a second chance at life.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition pulse-animation">
+                    <i class="fas fa-play mr-2"></i> Play Demo
+                </button>
+                <button class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-blue-600 transition">
+                    <i class="fas fa-download mr-2"></i> Download Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">About the Game</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3" alt="Rescued animals" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Make a Difference Through Play</h3>
+                    <p class="text-gray-600 mb-4">Street Paws Rescue is an educational Python game that simulates the real-world challenges of animal rescue operations. Players take on the role of a volunteer rescuer navigating city streets to find, help, and rehabilitate abandoned animals.</p>
+                    <p class="text-gray-600 mb-6">The game combines strategy, resource management, and quick decision-making with heartwarming stories of animal recovery. A portion of all proceeds goes to real animal shelters.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Education</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Simulation</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Adventure</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Strategy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Game Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-dog"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Diverse Animals</h3>
+                    <p class="text-gray-600">Rescue dogs, cats, rabbits, and more - each with unique needs and personalities that affect gameplay.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="text-purple-600 text-4xl mb-4">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Dynamic City Map</h3>
+                    <p class="text-gray-600">Explore procedurally generated city districts with changing weather and time of day affecting gameplay.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Rehabilitation System</h3>
+                    <p class="text-gray-600">Nurse animals back to health with medical treatments, proper nutrition, and socialization.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="text-yellow-600 text-4xl mb-4">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Shelter Management</h3>
+                    <p class="text-gray-600">Upgrade your shelter facilities, hire staff, and manage resources to help more animals.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="text-red-600 text-4xl mb-4">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Adoption System</h3>
+                    <p class="text-gray-600">Match rehabilitated animals with loving families based on personality compatibility.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Progress Tracking</h3>
+                    <p class="text-gray-600">See the impact of your work with statistics on animals saved and community awareness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gameplay Section -->
+    <section id="gameplay" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Gameplay Overview</h2>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 text-center text-gray-800">Rescue Mechanics</h3>
+                <div class="flex flex-col lg:flex-row items-center gap-8">
+                    <div class="lg:w-1/2 order-2 lg:order-1">
+                        <div class="bg-gray-800 text-white p-6 rounded-lg mb-4">
+                            <h4 class="font-bold text-lg mb-2">1. Exploration Phase</h4>
+                            <p>Navigate city streets using arrow keys or WASD to find animals in need. Listen for barks, meows, or visual cues.</p>
+                        </div>
+                        <div class="bg-gray-800 text-white p-6 rounded-lg mb-4">
+                            <h4 class="font-bold text-lg mb-2">2. Assessment</h4>
+                            <p>Examine each animal's condition (health, temperament) to determine the best approach for rescue.</p>
+                        </div>
+                        <div class="bg-gray-800 text-white p-6 rounded-lg">
+                            <h4 class="font-bold text-lg mb-2">3. Rescue Action</h4>
+                            <p>Use appropriate tools (net, treats, carrier) based on the animal's state. Some may require gentle coaxing while others need immediate medical attention.</p>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 order-1 lg:order-2">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3" alt="Gameplay screenshot" class="rounded-lg shadow-xl w-full">
+                            <div class="absolute -bottom-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg">
+                                <i class="fas fa-gamepad mr-2"></i> Interactive Rescue
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 text-center text-gray-800">Meet the Animals</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Animal 1 -->
+                    <div class="animal-card bg-white rounded-lg overflow-hidden shadow-md transition cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-4.0.3" alt="Dog" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold">Max</h4>
+                            <p class="text-sm text-gray-600">Injured stray dog</p>
+                            <div class="flex mt-2">
+                                <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Medical Care</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Animal 2 -->
+                    <div class="animal-card bg-white rounded-lg overflow-hidden shadow-md transition cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3" alt="Cat" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold">Luna</h4>
+                            <p class="text-sm text-gray-600">Scared kitten</p>
+                            <div class="flex mt-2">
+                                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Socialization</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Animal 3 -->
+                    <div class="animal-card bg-white rounded-lg overflow-hidden shadow-md transition cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1556838803-cc94986cb631?ixlib=rb-4.0.3" alt="Rabbit" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold">Thumper</h4>
+                            <p class="text-sm text-gray-600">Abandoned rabbit</p>
+                            <div class="flex mt-2">
+                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Nutrition</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Animal 4 -->
+                    <div class="animal-card bg-white rounded-lg overflow-hidden shadow-md transition cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1591769225440-811ad7d6eab2?ixlib=rb-4.0.3" alt="Bird" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold">Sky</h4>
+                            <p class="text-sm text-gray-600">Wing injury</p>
+                            <div class="flex mt-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Veterinary</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-semibold mb-6 text-center text-gray-800">Controls</h3>
+                <div class="bg-gray-100 p-6 rounded-lg max-w-2xl mx-auto">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow text-center">
+                            <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+                            <p>Move Up</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow text-center">
+                            <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-arrow-down"></i>
+                            </div>
+                            <p>Move Down</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow text-center">
+                            <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-arrow-left"></i>
+                            </div>
+                            <p>Move Left</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow text-center">
+                            <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <p>Move Right</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow text-center col-span-2">
+                            <div class="bg-blue-200 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <p>Interact/Rescue</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-center text-gray-600">Also supports WASD keys and mouse clicks for menu navigation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Make a Difference?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Download Street Paws Rescue today and start your animal rescue adventure!</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+                <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg max-w-sm">
+                    <h3 class="text-2xl font-bold mb-4">Basic Version</h3>
+                    <p class="text-4xl font-bold mb-4">Free</p>
+                    <ul class="text-left mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>10+ rescue scenarios</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>5 animal types</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Basic shelter management</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition">
+                        Download Free
+                    </button>
+                </div>
+                
+                <div class="bg-purple-700 text-white p-6 rounded-lg shadow-lg max-w-sm transform scale-105">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-yellow-900 px-3 py-1 text-sm font-bold rounded-bl-lg">BEST VALUE</div>
+                    <h3 class="text-2xl font-bold mb-4">Premium Edition</h3>
+                    <p class="text-4xl font-bold mb-4">$9.99</p>
+                    <ul class="text-left mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>50+ rescue scenarios</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>15 animal types</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>Advanced shelter management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>Adoption network system</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>Supports real animal shelters</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-yellow-400 hover:bg-yellow-300 text-yellow-900 font-bold py-3 px-6 rounded-full transition">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-white bg-opacity-20 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">System Requirements</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                    <div>
+                        <h4 class="font-bold mb-2">Minimum:</h4>
+                        <ul class="space-y-1">
+                            <li><i class="fas fa-check-circle mr-2"></i> Windows 10 or macOS 10.14+</li>
+                            <li><i class="fas fa-check-circle mr-2"></i> Python 3.8+ installed</li>
+                            <li><i class="fas fa-check-circle mr-2"></i> Dual Core 2.0GHz CPU</li>
+                            <li><i class="fas fa-check-circle mr-2"></i> 4GB RAM</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-2">Recommended:</h4>
+                        <ul class="space-y-1">
+                            <li><i class="fas fa-check-circle mr-2"></i> Windows 11 or macOS 12+</li>
+                            <li><i class="fas fa-check-circle mr-2"></i> Quad Core 3.0GHz CPU</li>
+                            <li><i class="fas fa-check-circle mr-2"></i> 8GB RAM</li>
+                            <li><i class="fas fa-check-circle mr-2"></i> Dedicated GPU</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between mb-8">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-paw text-2xl mr-3"></i>
+                        <h3 class="text-2xl font-bold">Street Paws Rescue</h3>
+                    </div>
+                    <p class="max-w-xs text-gray-400">Making a difference one rescue at a time through the power of gaming.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Game</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Download</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Updates</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Support</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Community</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Donate</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Street Paws Rescue. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Python Code Modal -->
+    <div id="pythonModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-900 rounded-lg shadow-xl max-w-4xl w-full max-h-screen overflow-auto">
+            <div class="flex justify-between items-center bg-gray-800 px-6 py-4 rounded-t-lg">
+                <h3 class="text-xl font-bold text-white">Python Game Code Preview</h3>
+                <button id="closeModal" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <pre class="bg-gray-800 p-4 rounded-lg overflow-x-auto text-green-400 text-sm">
+                    <code>
+# Street Paws Rescue - Python Game
+import pygame
+import random
+import sys
+
+# Initialize pygame
+pygame.init()
+
+# Game constants
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+FPS = 60
+
+# Colors
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+BLUE = (0, 120, 215)
+
+# Create screen
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("Street Paws Rescue")
+clock = pygame.time.Clock()
+
+# Game classes
+class Animal:
+    def __init__(self, x, y, animal_type, condition):
+        self.x = x
+        self.y = y
+        self.type = animal_type
+        self.condition = condition  # "healthy", "injured", "sick", "scared"
+        self.rescued = False
+        self.image = self.load_image()
+        
+    def load_image(self):
+        # In a full game, this would load different images
+        surf = pygame.Surface((50, 50))
+        colors = {
+            "dog": (139, 69, 19),    # brown
+            "cat": (169, 169, 169),  # gray
+            "rabbit": (255, 255, 255) # white
+        }
+        surf.fill(colors.get(self.type, (255, 0, 0)))
+        return surf
+        
+    def draw(self, surface):
+        surface.blit(self.image, (self.x, self.y))
+        # Draw condition indicator
+        if not self.rescued:
+            colors = {
+                "healthy": (0, 255, 0),
+                "injured": (255, 165, 0),
+                "sick": (255, 0, 0),
+                "scared": (255, 255, 0)
+            }
+            pygame.draw.circle(surface, colors[self.condition], (self.x + 25, self.y - 10), 5)
+
+class Player:
+    def __init__(self):
+        self.x = SCREEN_WIDTH // 2
+        self.y = SCREEN_HEIGHT // 2
+        self.speed = 5
+        self.image = pygame.Surface((40, 60))
+        self.image.fill(BLUE)
+        self.rescue_tools = ["net", "treats", "carrier", "blanket"]
+        self.selected_tool = 0
+        self.rescued_animals = []
+        
+    def move(self, dx, dy):
+        self.x = max(0, min(SCREEN_WIDTH - 40, self.x + dx * self.speed))
+        self.y = max(0, min(SCREEN_HEIGHT - 60, self.y + dy * self.speed))
+        
+    def draw(self, surface):
+        surface.blit(self.image, (self.x, self.y))
+        # Draw current tool
+        font = pygame.font.SysFont(None, 24)
+        tool_text = font.render(f"Tool: {self.rescue_tools[self.selected_tool]}", True, WHITE)
+        surface.blit(tool_text, (10, 10))
+        
+    def next_tool(self):
+        self.selected_tool = (self.selected_tool + 1) % len(self.rescue_tools)
+        
+    def try_rescue(self, animal):
+        # Simple rescue logic - in full game would be more complex
+        if not animal.rescued:
+            if (abs(self.x - animal.x) < 50 and abs(self.y - animal.y) < 50):
+                # Check if correct tool is being used
+                if (animal.condition == "injured" and self.rescue_tools[self.selected_tool] == "blanket") or \
+                   (animal.condition == "scared" and self.rescue_tools[self.selected_tool] == "treats"):
+                    animal.rescued = True
+                    self.rescued_animals.append(animal)
+                    return True
+        return False
+
+# Game setup
+def setup_game():
+    player = Player()
+    animals = []
+    
+    # Create random animals
+    animal_types = ["dog", "cat", "rabbit"]
+    conditions = ["healthy", "injured", "sick", "scared"]
+    
+    for _ in range(5):
+        x = random.randint(50, SCREEN_WIDTH - 50)
+        y = random.randint(50, SCREEN_HEIGHT - 50)
+        animal_type = random.choice(animal_types)
+        condition = random.choice(conditions)
+        animals.append(Animal(x, y, animal_type, condition))
+    
+    return player, animals
+
+# Main game loop
+def main():
+    player, animals = setup_game()
+    running = True
+    
+    while running:
+        # Process events
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    # Try to rescue animals
+                    for animal in animals:
+                        if player.try_rescue(animal):
+                            print(f"Rescued a {animal.type}!")
+                elif event.key == pygame.K_TAB:
+                    player.next_tool()
+        
+        # Get keyboard input for movement
+        keys = pygame.key.get_pressed()
+        dx, dy = 0, 0
+        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
+            dx -= 1
+        if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
+            dx += 1
+        if keys[pygame.K_UP] or keys[pygame.K_w]:
+            dy -= 1
+        if keys[pygame.K_DOWN] or keys[pygame.K_s]:
+            dy += 1
+            
+        player.move(dx, dy)
+        
+        # Draw everything
+        screen.fill(BLACK)
+        
+        for animal in animals:
+            animal.draw(screen)
+            
+        player.draw(screen)
+        
+        # Draw rescued count
+        font = pygame.font.SysFont(None, 36)
+        rescued_text = font.render(f"Rescued: {len(player.rescued_animals)}/{len(animals)}", True, WHITE)
+        screen.blit(rescued_text, (SCREEN_WIDTH - 200, 10))
+        
+        pygame.display.flip()
+        clock.tick(FPS)
+    
+    pygame.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    main()
+                    </code>
+                </pre>
+                <div class="mt-4 flex justify-end">
+                    <button id="copyCode" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <i class="fas fa-copy mr-2"></i> Copy Code
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Code Button -->
+    <div class="fixed bottom-6 right-6">
+        <button id="viewCode" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition flex items-center">
+            <i class="fas fa-code mr-2"></i> View Python Code
+        </button>
+    </div>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('pythonModal');
+        const viewBtn = document.getElementById('viewCode');
+        const closeBtn = document.getElementById('closeModal');
+        const copyBtn = document.getElementById('copyCode');
+        
+        viewBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        copyBtn.addEventListener('click', () => {
+            const code = document.querySelector('pre code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                copyBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Copied!';
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="fas fa-copy mr-2"></i> Copy Code';
+                }, 2000);
+            });
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
